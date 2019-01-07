@@ -3,7 +3,7 @@
 		<meta charset="utf-8"/> 
 		<link rel="stylesheet" href="style1.css"/>
 		
-		<title> Page de connexion </title> 
+		<title> Connexion </title> 
 	</head> 
 	<body> 
 		<?php echo "Connexion";
@@ -19,7 +19,7 @@
 			</p>
 		</form>
 
-		<?php echo "<a href ='Page1.php'> S'incrire </a>"; 
+		<?php echo "<a href ='index.php'> S'inscrire </a>"; 
 
 
 		?> 
