@@ -14,6 +14,7 @@
 			<p> 
 				Login : <input type = "text" name="login" /> </br>
 				Mot de passe : <input type = "text" name="password" /> </br> 
+				Validation Mot de passe : <input type = "text" name="validate" /> </br> 
 				Nom :  <input type = "text" name="nom" /> </br>
 				Prenom : <input type = "text" name="prenom" /> </br>
 				Date de naissance :  <input type = "text" name="DateNaissance" /> </br>
