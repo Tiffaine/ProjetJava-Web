@@ -5,7 +5,7 @@
 		<title> Connexion </title>
 	</head>
 	<body>
-		<form method ="get" action ="retourConnexion.php"> 
+		<form method ="get" action ="retourCreerCompte.php"> 
 			<p> 
 				login : <input type = "text" name="login" /> </br>
 				mot de passe : <input type = "password" name="password" /> </br>
