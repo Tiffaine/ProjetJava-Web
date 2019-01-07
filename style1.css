@@ -1,0 +1,28 @@
+body 
+{
+	background-color: rgb(253,233,224);
+	font-family : Verdana;
+	color : black;
+}
+
+h1
+{
+	font-size : 40px;
+	font-style : italic; 
+	color : rgb(199,44,72);
+	text-align : center;
+}
+
+h2
+{
+	font-size : 30px;
+	font-style : italic; 
+	color : rgb(199,44,72);
+	text-align : center;
+}
+
+h3
+{
+	font-size: 25px;
+	color : rgb(199,44,72);
+}
