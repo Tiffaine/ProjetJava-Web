@@ -19,7 +19,7 @@
 			</p>
 		</form>
 
-		<?php echo "<a href ='Page1.php'> S'incrire </a>"; 
+		<?php echo "<a href ='index.php'> S'inscrire </a>"; 
 
 
 		?> 
