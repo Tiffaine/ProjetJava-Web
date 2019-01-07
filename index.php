@@ -8,9 +8,9 @@
 		<?php echo "WelcomePage";
 		// start a session 
 
-		echo "<a href='Connexion.php'> Connexion </a>"; 
+		echo "<a href='connexion.php'> Connexion </a>"; 
 		echo "Pas encore de compte ? Créez-en un!"
-		echo "<a href='CreerCompte.php'> Créer un compte </a>"; 
+		echo "<a href='creerCompte.php'> Créer un compte </a>"; 
 
 		?> 
 	</body>
