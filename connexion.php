@@ -11,7 +11,7 @@
 		session_start();
 
 		?>
-		<form method ="get" action ="retourConnexion.php"> 
+		<form method ="post" action ="retourConnexion.php"> 
 			<p> 
 				login : <input type = "text" name="login" /> </br>
 				mot de passe : <input type = "password" name="password" /> </br> 
