@@ -9,33 +9,27 @@
 		<?php echo "Connexion";
 			// start a session 
 			session_start();
-			if(isset($_GET["login"])&&
-			   isset($_GET["mdp"])&&
-			   isset($_GET["validate"])&&
-			   isset($_GET["nom"])&&
-			   isset($_GET["prenom"])&&
-			   isset($_GET["dateNaissance"])&&
-			   isset($_GET["genre"])&&
-			   isset($_GET["groupeSanguin"])&&
-			   isset($_GET["rhesus"])){
+			if(isset($_GET["login"]) and 
+			   isset($_GET["mdp"]) and 
+			   isset($_GET["validate"]) and
+			   isset($_GET["nom"]) and 
+			   isset($_GET["prenom"]) and 
+			   isset($_GET["dateN"])){
 				$login = $_GET["login"];
 				$mdp = $_GET["mdp"];
 				$validate = $_GET["validate"];
 				$nom = $_GET["nom"];
 				$prenom = $_GET["prenom"];
-				$dateNaissance = $_GET["dateNaissance"];
-				$genre = $_GET["genre"];
-				$groupeSanguin = $_GET["groupeSanguin"];
-				$rhesus = $_GET["rhesus"];
+				$dateN = $_GET["dateN"];
 				if($mdp==$validate){
 					$connection = pg_connect("host=localhost dbname=dondusang user=root password = network")
 					or die ('Connexion impossible : '.pg_last_error());
 					$connection->set_charset("utf8");
 					$sqlQuery = "select login from Donneur";
-					$sqlLogin = pg_query($sqlQuery) or die ('Echex de la requête : ". pg_last_error());
+					$sqlLogin = pg_query($sqlQuery) or die ('Echex de la requête : '. pg_last_error());
 					if($login != $sqlLogin){
-						$sqlQuery = "insert into Donneur (login ,mdp, nom, prenom, genre, dateN, groupeS, rhesus)
-						values(".$login.",".$mdp.",".$nom.",".$prenom.",".$genre.",".$dateNaissance.",".$groupeSanguin.",".$rhesus.");";
+						$sqlQuery = "insert into Utilisateur (login ,mdp, nom, prenom, dateN)
+						values(".$login.",".$mdp.",".$nom.",".$prenom.",".$dateN.");";
 						$result = pg_query($sqlQuery)
 						or die ('Echec de la requete : '. pg_last_error());
 						echo ("<a href=\"connexion.php\"> Compte créé</a>");
@@ -44,7 +38,7 @@
 						echo ("<a href=\"inscription.php\"> Login déjà utilisé</a>");
 						exit();
 				} else {
-					echo ("<a href=\"inscription.php\"> Saisie incorrecte</a>");
+					echo ("<a href=\"inscription.php\"> Veuillez valider votre mot de passe </a>");
 					exit();
 				}
 			} else {
