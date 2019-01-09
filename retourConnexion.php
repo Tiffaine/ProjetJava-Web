@@ -9,9 +9,9 @@
 		<?php echo "Connexion";
 		// start a session 
 		session_start();
-		if(isset($_POST['login'] and $_POST['mdp']){
-			$login = $_POST['login'];
-			$mdp = $_POST['mdp'];
+		if(isset($_GET['login'] and $_GET['mdp']){
+			$login = $_GET['login'];
+			$mdp = $_GET['mdp'];
 			if(($login != "") and ($mdp != "")){
 				$connection = new pg_connect(host=localhost dbname=dondusang user=root password=network)
 				or die('Connexion impossible : '. pg_last_error());
