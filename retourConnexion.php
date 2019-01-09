@@ -27,7 +27,7 @@
 					$resultat = $result->fetch_assoc();
 					if($resultat != NULL){
 						if($resultat["idUtilisateur"] != NULL){
-							session_start();
+							//session_start();
 							$SESSION["idUtilisateur"] = $resultat["idUtilisateur"];
 							if($resultat["idUtilisateur"] == '1'){
 								echo ("Vous êtes connecté en tant qu'administrateur </br>");
