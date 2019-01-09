@@ -14,7 +14,7 @@
 		<form method ="get" action ="retourConnexion.php"> 
 			<p> 
 				login : <input type = "text" name="login" /> </br>
-				mot de passe : <input type = "password" name="password" /> </br> 
+				mot de passe : <input type = "password" name="mdp" /> </br> 
 				<input type ="submit" value ="connexion" /> 
 			</p>
 		</form>
