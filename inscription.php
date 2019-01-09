@@ -17,10 +17,7 @@
 				Validation Mot de passe : <input type = "password" name="validate" /> </br> 
 				Nom :  <input type = "text" name="nom" /> </br>
 				Prenom : <input type = "text" name="prenom" /> </br>
-				Date de naissance :  <input type = "text" name="dateNaissance" /> </br>
-				Genre :  <input type = "text" name="genre" /> </br>
-				GroupeSanguin :  <input type = "text" name="groupeSanguin" /> </br>
-				Rhesus :  <input type = "text" name="rhesus" /> </br>
+				Date de naissance :  <input type = "text" name="dateN" /> </br>
 				<input type ="submit" value ="connexion" /> 
 			</p>
 		</form>
