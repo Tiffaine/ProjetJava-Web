@@ -27,6 +27,8 @@
 							<a href=\"supprimerMedecin.php?idMedecin=".$listeMedecin['idUtilisateur']."\">Supprimer</a> </br>");
 						}while($listeMedecin);
 					}
+					echo("<br> <a href=\"ajouterMedecin.php\">Ajouter un médecin</a> </br>");
+					exit();
 				} else {
 					echo ("Vous n'êtes pas autorisé à acceder à ce menu </br>");
 					echo ("<a href=\"index.php\"> Retour</a>");
