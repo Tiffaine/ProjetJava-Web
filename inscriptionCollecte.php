@@ -1,0 +1,51 @@
+<html> 
+	<head> 
+		<meta charset="utf-8"/> 
+		<link rel="stylesheet" href="style1.css"/> 
+
+		<title> desinscriptionCollecte </title>
+	</head>
+
+	<body>
+		<?php 
+			session_start(); 
+			//Connexion à la base de données 
+
+			//Formulaire 
+
+
+			<form method ="get" action ="retourParticipation?idCollect=$idCollecte.php"> 
+			<p> 
+				Groupe Sanguin : <select name="groupeSanguin" size ="4"> 
+					<option>A</option>
+					<option>B</option>
+					<option>AB</option>
+					<option>O</option>
+					</select> </br>
+				
+				Rhésus : 
+				<label> Positif + 
+				<input type="radio" name="rhesus" value ="positif"> 
+				</label> </br> 
+				<label> Négatif - 
+				<input type="radio" name="rhesus" value ="negatif"> 
+				</label></br>	
+
+				Genre :
+				<label> Féminin
+				<input type="radio" name="genre" value ="feminin"> 
+				</label> </br> 
+				<label> Masculin
+				<input type="radio" name="genre" value ="masculin"> 
+				</label></br>	
+				<label> Autre 
+				<input type="radio" name="genre" value="masculin"> 
+				</label></br>
+				<input type ="submit" value ="connexion" /> 
+			</p>
+		</form>
+
+			
+		?> 
+	</body>
+</html>
