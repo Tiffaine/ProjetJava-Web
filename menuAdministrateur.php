@@ -14,7 +14,7 @@
 				if($id == '1'){
 					$connection = new pg_connect(host=localhost dbname=dondusang user=root password=network)
 					or die('Connexion impossible : '. pg_last_error());
-					$sqlQuery = "select idUtilisateur, nom, prenom from Utilisateur u when u.type like 'medecin'";
+					$sqlQuery = "select idUtilisateur, nom, prenom from Utilisateur u where u.type like 'medecin'";
 					$result = pg_query($sqlQuery) or die ('Echec de la requête : '.pg_last_error());
 					if(!$result){
 						echo("Echec de la requête </br>");
