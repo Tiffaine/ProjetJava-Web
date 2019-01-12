@@ -10,7 +10,7 @@
 		// start a session 
 
 		?>
-		<form method ="get" action ="retourInscriptionphp"> 
+		<form method ="get" action ="retourInscription.php"> 
 			<p> 
 				Login : <input type = "text" name="login" /> </br>
 				Mot de passe : <input type = "password" name="mdp" /> </br> 
@@ -22,7 +22,7 @@
 			</p>
 		</form>
 
-		<?php echo "<a href ='index.php'> S'inscrire </a>; 
+		<?php echo "<a href ='index.php'> Retour </a>; 
 
 
 		?> 
