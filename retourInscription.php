@@ -25,18 +25,19 @@
 					$connection = pg_connect("host=localhost dbname=dondusang user=root password = network")
 					or die ('Connexion impossible : '.pg_last_error());
 					$connection->set_charset("utf8");
-					$sqlQuery = "select login from Donneur";
-					$sqlLogin = pg_query($sqlQuery) or die ('Echex de la requête : '. pg_last_error());
+					$sqlQuery = "select login from Utilisateur";
+					$sqlLogin = pg_query($sqlQuery) or die ('Echec de la requête : '. pg_last_error());
 					if($login != $sqlLogin){
-						$sqlQuery = "insert into Utilisateur (login ,mdp, nom, prenom, dateN)
-						values(".$login.",".$mdp.",".$nom.",".$prenom.",".$dateN.");";
-						$result = pg_query($sqlQuery)
+						$sqlQuery = "insert into Utilisateur (login ,mdp, type, nom, prenom, dateN)
+						values(".$login.",".$mdp.",'donneur',".$nom.",".$prenom.",".$dateN.");";
+						$result = pg_query($sqlQuery);
 						or die ('Echec de la requete : '. pg_last_error());
 						echo ("<a href=\"connexion.php\"> Compte créé</a>");
 						exit();
 					} else {
 						echo ("<a href=\"inscription.php\"> Login déjà utilisé</a>");
 						exit();
+					}
 				} else {
 					echo ("<a href=\"inscription.php\"> Veuillez valider votre mot de passe </a>");
 					exit();
