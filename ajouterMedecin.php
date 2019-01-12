@@ -12,7 +12,7 @@
 		<?php echo "Supression d'un compte médecin";
 		// start a session 
 		session_start();
-		$id = $SESSION["idUtilisateur"]
+		$id = $SESSION["idUtilisateur"];
 		if(isset($id)){
 			if($id == '1'){
 				echo('<form method="get" action="retourAjout.php">');
