@@ -19,7 +19,6 @@ CREATE TABLE 'Utilisateur'(
 
 CREATE TABLE 'Collecte'(
 	idCollecte integer not null auto_increment, //Identifiant de la collecte propre à chacune
-	nbInf integer not null, //Nombre d'infirmières
 	nbP integer, //Nombre de participants
 	nbMaxP integer not null, //Maximum de participants accepté
 	nbL integer not null, //Nombre de Lits pour la collecte
