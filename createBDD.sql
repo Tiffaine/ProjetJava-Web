@@ -24,8 +24,10 @@ CREATE TABLE 'Collecte'(
 	nbMaxP integer not null, //Maximum de participants accepté
 	nbL integer not null, //Nombre de Lits pour la collecte
 	etat varchar(20) not null, //Etat de la collecte Ouvert En cours ou Fermé
-	date DATETIME not null,
+	date DATE not null,
 	lieu varchar() not null,
+	description varchar(), 
+	
 	
 	primary key(idCollecte) //Identifiant comme clé primaire
 	);
