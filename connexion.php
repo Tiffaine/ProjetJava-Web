@@ -7,6 +7,7 @@
 	</head> 
 	<body> 
 		<?php echo "Connexion";
+		echo ("<a href=\"index.php\"> Retour </a>");
 		// start a session 
 		session_start();
 
