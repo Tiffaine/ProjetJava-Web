@@ -10,6 +10,7 @@
 		<?php 
 			session_start(); 
 			//Connexion à la base de données 
+			echo ("<a href=\"index.php\"> Déconnexion </a>");
 			session_start();
 			$id = $SESSION["idUtilisateur"];
 			if(isset($id)){
