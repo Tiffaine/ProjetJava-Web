@@ -6,8 +6,9 @@
 		<title> Page d'inscription </title> 
 	</head> 
 	<body> 
-		echo ("<a href=\"index.php\"> Retour </a>");
+		
 		<?php echo "Inscription";
+		echo ("<a href=\"index.php\"> Retour </a>");
 		// start a session 
 
 		?>
