@@ -3,7 +3,7 @@
 		<meta charset="utf-8"/> 
 		<link rel="stylesheet" href="style1.css"/> 
 
-		<title> desinscriptionCollecte </title>
+		<title> InscriptionCollecte </title>
 	</head>
 
 	<body>
