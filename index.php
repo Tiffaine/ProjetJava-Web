@@ -5,7 +5,7 @@
 		<title> Gestionnaire de Don du Sang - Page d'accueil </title> 
 	</head> 
 	<body> 
-		<?php echo "Bienvenue sur le Gstionnaire de DOn du Sang";
+		<?php echo "Bienvenue sur le Gestionnaire de Don du Sang";
 		// start a session 
 
 		echo "<a href='connexion.php'> Connexion </a>"; 
