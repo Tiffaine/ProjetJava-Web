@@ -20,14 +20,17 @@
 
 
 		//Connexion à la base :) 
-
-		//Requete
-		$maRequete="INSERT INTO Donneur ($SESSION["idUtilisateur"],$idCollecte,$groupeSanguin,$_SESSION['rhesus']=$rhesus;) ";
-			$result=$connexion->query($maRequete); 
-			if(!$result){
-			echo("La requête ne s'est pas faite"); 
-			exit(); 
-			}
+		$connection = new pg_connect(host=localhost dbname=dondusang user=root password=network)
+					or die('Connexion impossible : '. pg_last_error());
+					$sqlQuery = "INSERT INTO Donneur (".$SESSION["idUtilisateur"].",".$idCollecte.",".$groupeSanguin.",".$rhesus;) ";
+					$result = pg_query($sqlQuery)
+					or die('Echec de la requête : '.pg_last_error());
+					$resultat = $result -> fetch_assoc();
+					if(!$resultat){
+						echo ("Aucun compte médecin correspondant</br>");
+						echo ("<a href=\"menuAdministrateur.php\"> Retour </a>");
+						exit();
+					}
 
 		?> 
 	</body>
