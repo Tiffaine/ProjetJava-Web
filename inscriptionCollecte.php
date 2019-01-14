@@ -41,7 +41,14 @@
 				<label> Autre 
 				<input type="radio" name="genre" value="masculin"> 
 				</label></br>
-				<input type ="submit" value ="connexion" /> 
+					
+				//Get nbPart et nbMaxPart 
+				if($nbPart<=$nbMaxPart){
+					<input type ="submit" value ="connexion" /> 
+				}
+				else 
+					echo "La collecte est complète ! ";
+				
 			</p>
 		</form>
 
