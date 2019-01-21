@@ -7,22 +7,19 @@
 	</head> 
 	<body> 
 		<br> Connexion </br>
-		<a href=\"index.php\"> Retour </a>
-	
-		<?php
-		// start a session 
-		session_start();
-		?>
-	
 		<form method ="get" action ="retourConnexion.php"> 
-			<p> 
-				login : <input type = "text" name="login" /> </br>
-				mot de passe : <input type = "password" name="mdp" /> </br> 
+			<fieldset>
+            	<legend>login : </legend>
+                <input type = "text" name="login" />
+            </fieldset>
+            <fieldset>
+            	<legend>mot de passe : </legend>
+                <input type = "password" name="mdp" />
+            </fieldset>
 				<input type ="submit" value ="connexion" /> 
-			</p>
 		</form>
 
-		<a href ='index.php'> S'inscrire </a>
+		<a href ='index.php'> Retour </a>
 
 	</body>
 </html>
