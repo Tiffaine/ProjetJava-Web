@@ -5,7 +5,7 @@ DROP TABLE if exists Donneur;
 DROP TABLE if exists Collecte;
 DROP TABLE if exists Utilisateur;
 
-CREATE TABLE 'Utilisateur'(
+CREATE TABLE Utilisateur(
 	idUtilisateur integer not null auto_increment, //Identifiant de l utilisateur propre à chacun
 	type varchar(20) not null, //Type soit Médecin, soit Donneur
 	login varchar(20) not null, //Login pour se connecter
@@ -17,7 +17,7 @@ CREATE TABLE 'Utilisateur'(
 	primary key(idUtilisateur) //Identifiant comme clé primaire
 	);
 
-CREATE TABLE 'Collecte'(
+CREATE TABLE Collecte(
 	idCollecte integer not null auto_increment, //Identifiant de la collecte propre à chacune
 	nbP integer, //Nombre de participants
 	nbMaxP integer not null, //Maximum de participants accepté
@@ -31,7 +31,7 @@ CREATE TABLE 'Collecte'(
 	primary key(idCollecte) //Identifiant comme clé primaire
 	);
 	
-CREATE TABLE 'Donneur'(
+CREATE TABLE Donneur(
 	refDonneur integer not null, //Référence à l utilisateur
 	refCollecte integer not null, //Référence à la collecte
 	groupeS varchar(10) not null, //Groupe sanguin A B AB O ou inconnu
@@ -41,7 +41,7 @@ CREATE TABLE 'Donneur'(
 	foreign key(refCollecte) references Collecte(idCollecte) //Clé étrangère
 	);
 
-CREATE TABLE 'Medecin'(
+CREATE TABLE Medecin(
 	refMedecin integer not null, //Référence à l utilisateur
 	refCollecte integer not null, //Référence à la collecte
 	
