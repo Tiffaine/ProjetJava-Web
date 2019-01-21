@@ -6,27 +6,34 @@
 		<title> Page d'inscription </title> 
 	</head> 
 	<body> 
-		
-		<?php echo "Inscription </br>";
-		// start a session 
-
-		?>
+		<br> Formulaire d'Inscription </br>
 		<form method ="get" action ="retourInscription.php"> 
-			<p> 
-				Login : <input type = "text" name="login" /> </br>
-				Mot de passe : <input type = "password" name="mdp" /> </br> 
-				Validation Mot de passe : <input type = "password" name="validate" /> </br> 
-				Nom :  <input type = "text" name="nom" /> </br>
-				Prenom : <input type = "text" name="prenom" /> </br>
-				Date de naissance :  <input type = "text" name="dateN" /> </br>
-				<input type ="submit" value ="connexion" /> 
-			</p>
+			<fieldset> 
+				<legend>Login : </legend>
+                <input type = "text" name="login" />
+            </fieldset>
+            <fieldset>
+            	<legend>Mot de passe : </legend>
+                <input type = "password" name="mdp" />
+            </fieldset>
+            <fieldset>
+            	<legend>Validation : </legend>
+                <input type = "password" name="validate" />
+            </fieldset>
+            <fieldset>
+            	<legend>Nom : </legend>
+                <input type = "text" name="nom" />
+            </fieldset>
+            <fieldset>
+            	<legend> Prenom : </legend>
+                <input type = "text" name="prenom" />
+            </fieldset>
+            <fieldset>
+            	<legend> Date de naissance : </legend>
+                <input type = "text" name="dateN" />
+            </fieldset>
+            	<input type ="submit" value ="connexion" /> 
 		</form>
-
 		<a href ='index.php'> Retour </a>
-
-
-		?> 
 	</body>
 </html>
-
