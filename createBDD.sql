@@ -1,52 +1,52 @@
 
 
-DROP TABLE if exists Medecin;
-DROP TABLE if exists Donneur;
-DROP TABLE if exists Collecte;
-DROP TABLE if exists Utilisateur;
+DROP TABLE if exists Medecin
+DROP TABLE if exists Donneur
+DROP TABLE if exists Collecte
+DROP TABLE if exists Utilisateur
 
 CREATE TABLE Utilisateur(
-	idUtilisateur integer not null auto_increment, //Identifiant de l utilisateur propre à chacun
-	type varchar(20) not null, //Type soit Médecin, soit Donneur
-	login varchar(20) not null, //Login pour se connecter
-	mdp varchar(20) not null, //Mot de passe
-	nom varchar(30) not null, //Nom de l utilisateur
-	prenom varchar(30) not null, //Prénom de l utilisateur
-	dateN DATE, //Date de Naissance
+	idUtilisateur integer not null auto_increment,
+	type varchar(20) not null,
+	login varchar(20) not null,
+	mdp varchar(20) not null,
+	nom varchar(30) not null,
+	prenom varchar(30) not null,
+	dateN DATE,
 	
-	primary key(idUtilisateur) //Identifiant comme clé primaire
-	);
+	primary key(idUtilisateur)
+	)
 
 CREATE TABLE Collecte(
-	idCollecte integer not null auto_increment, //Identifiant de la collecte propre à chacune
-	nbP integer, //Nombre de participants
-	nbMaxP integer not null, //Maximum de participants accepté
-	nbL integer not null, //Nombre de Lits pour la collecte
-	etat varchar(20) not null, //Etat de la collecte Ouvert En cours ou Fermé
+	idCollecte integer not null auto_increment,
+	nbP integer,
+	nbMaxP integer not null,
+	nbL integer not null,
+	etat varchar(20) not null,
 	date DATE not null,
 	lieu varchar() not null,
 	description varchar(), 
 	
 	
-	primary key(idCollecte) //Identifiant comme clé primaire
-	);
+	primary key(idCollecte)
+	)
 	
 CREATE TABLE Donneur(
-	refDonneur integer not null, //Référence à l utilisateur
-	refCollecte integer not null, //Référence à la collecte
-	groupeS varchar(10) not null, //Groupe sanguin A B AB O ou inconnu
-	rhesus varchar(10) not null, //Rhesus + - ou inconnu
+	refDonneur integer not null,
+	refCollecte integer not null,
+	groupeS varchar(10) not null,
+	rhesus varchar(10) not null,
 	
-	foreign key(refDonneur) references Utilisateur(idUtilisateur), //Clé étrangère
-	foreign key(refCollecte) references Collecte(idCollecte) //Clé étrangère
-	);
+	foreign key(refDonneur) references Utilisateur(idUtilisateur),
+	foreign key(refCollecte) references Collecte(idCollecte)
+	)
 
 CREATE TABLE Medecin(
-	refMedecin integer not null, //Référence à l utilisateur
-	refCollecte integer not null, //Référence à la collecte
+	refMedecin integer not null,
+	refCollecte integer not null,
 	
-	foreign key(refDonneur) references Utilisateur(idUtilisateur), //Clé étrangère
-	foreign key(refCollecte) references Collecte(idCollecte) //Clé étrangère
-	);	
+	foreign key(refDonneur) references Utilisateur(idUtilisateur),
+	foreign key(refCollecte) references Collecte(idCollecte)
+	)	
 
 
