@@ -7,8 +7,7 @@
 	</head> 
 	<body> 
 		
-		<?php echo "Inscription";
-		echo ("<a href=\"index.php\"> Retour </a>");
+		<?php echo "Inscription </br>";
 		// start a session 
 
 		?>
