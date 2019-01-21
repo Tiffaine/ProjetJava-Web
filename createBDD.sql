@@ -6,7 +6,7 @@ DROP TABLE if exists Collecte
 DROP TABLE if exists Utilisateur
 
 CREATE TABLE Utilisateur(
-	idUtilisateur integer NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	idUtilisateur integer NOT NULL SERIAL PRIMARY KEY,
 	type varchar(20) NOT NULL,
 	login varchar(20) NOT NULL,
 	mdp varchar(20) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE Utilisateur(
 	)
 
 CREATE TABLE Collecte(
-	idCollecte integer NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	idCollecte integer NOT NULL SERIAL PRIMARY KEY,
 	nbP integer,
 	nbMaxP integer NOT NULL,
 	nbL integer NOT NULL,
