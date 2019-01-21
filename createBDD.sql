@@ -6,12 +6,12 @@ DROP TABLE if exists Collecte;
 DROP TABLE if exists Utilisateur;
 
 CREATE TABLE 'Utilisateur'(
-	idUtilisateur integer not null auto_increment, //Identifiant de l'utilisateur propre à chacun
+	idUtilisateur integer not null auto_increment, //Identifiant de l utilisateur propre à chacun
 	type varchar(20) not null, //Type soit Médecin, soit Donneur
 	login varchar(20) not null, //Login pour se connecter
 	mdp varchar(20) not null, //Mot de passe
-	nom varchar(30) not null, //Nom de l'utilisateur
-	prenom varchar(30) not null, //Prénom de l'utilisateur
+	nom varchar(30) not null, //Nom de l utilisateur
+	prenom varchar(30) not null, //Prénom de l utilisateur
 	dateN DATE, //Date de Naissance
 	
 	primary key(idUtilisateur) //Identifiant comme clé primaire
@@ -32,7 +32,7 @@ CREATE TABLE 'Collecte'(
 	);
 	
 CREATE TABLE 'Donneur'(
-	refDonneur integer not null, //Référence à l'utilisateur
+	refDonneur integer not null, //Référence à l utilisateur
 	refCollecte integer not null, //Référence à la collecte
 	groupeS varchar(10) not null, //Groupe sanguin A B AB O ou inconnu
 	rhesus varchar(10) not null, //Rhesus + - ou inconnu
@@ -42,7 +42,7 @@ CREATE TABLE 'Donneur'(
 	);
 
 CREATE TABLE 'Medecin'(
-	refMedecin integer not null, //Référence à l'utilisateur
+	refMedecin integer not null, //Référence à l utilisateur
 	refCollecte integer not null, //Référence à la collecte
 	
 	foreign key(refDonneur) references Utilisateur(idUtilisateur), //Clé étrangère
