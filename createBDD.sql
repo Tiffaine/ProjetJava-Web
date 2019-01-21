@@ -6,47 +6,42 @@ DROP TABLE if exists Collecte
 DROP TABLE if exists Utilisateur
 
 CREATE TABLE Utilisateur(
-	idUtilisateur integer not null auto_increment,
-	type varchar(20) not null,
-	login varchar(20) not null,
-	mdp varchar(20) not null,
-	nom varchar(30) not null,
-	prenom varchar(30) not null,
-	dateN DATE,
-	
-	primary key(idUtilisateur)
+	idUtilisateur integer NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	type varchar(20) NOT NULL,
+	login varchar(20) NOT NULL,
+	mdp varchar(20) NOT NULL,
+	nom varchar(30) NOT NULL,
+	prenom varchar(30) NOT NULL,
+	dateN DATE NOT NULL
 	)
 
 CREATE TABLE Collecte(
-	idCollecte integer not null auto_increment,
+	idCollecte integer NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nbP integer,
-	nbMaxP integer not null,
-	nbL integer not null,
-	etat varchar(20) not null,
-	date DATE not null,
-	lieu varchar() not null,
-	description varchar(), 
-	
-	
-	primary key(idCollecte)
+	nbMaxP integer NOT NULL,
+	nbL integer NOT NULL,
+	etat varchar(20) NOT NULL,
+	date DATE NOT NULL,
+	lieu varchar() NOT NULL,
+	description varchar()
 	)
 	
 CREATE TABLE Donneur(
-	refDonneur integer not null,
-	refCollecte integer not null,
-	groupeS varchar(10) not null,
-	rhesus varchar(10) not null,
+	refDonneur integer NOT NULL,
+	refCollecte integer NOT NULL,
+	groupeS varchar(10) NOT NULL,
+	rhesus varchar(10) NOT NULL,
 	
-	foreign key(refDonneur) references Utilisateur(idUtilisateur),
-	foreign key(refCollecte) references Collecte(idCollecte)
+	FOREIGN KEY (refDonneur) REFERENCES Utilisateur(idUtilisateur),
+	FOREIGN KEY (refCollecte) REFERENCES Collecte(idCollecte)
 	)
 
 CREATE TABLE Medecin(
-	refMedecin integer not null,
-	refCollecte integer not null,
+	refMedecin integer NOT NULL,
+	refCollecte integer NOT NULL,
 	
-	foreign key(refDonneur) references Utilisateur(idUtilisateur),
-	foreign key(refCollecte) references Collecte(idCollecte)
+	FOREIGN KEY(refDonneur) REFERENCES Utilisateur(idUtilisateur),
+	FOREIGN KEY(refCollecte) REFERENCES Collecte(idCollecte)
 	)	
 
 
