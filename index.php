@@ -5,11 +5,12 @@
 		<title> Gestionnaire de Don du Sang - Welcome Page </title> 
 	</head> 
 	<body> 
-		echo "Bienvenue sur le Gestionnaire de Don du Sang";
-		echo "<a href='connexion.php'> Connexion </a>"; 
-		echo "Pas encore de compte ? Créez-en un!";
-		echo "<a href='creerCompte.php'> Créer un compte </a>"; 
-
+		<?php
+			echo "Bienvenue sur le Gestionnaire de Don du Sang";
+			echo "<a href='connexion.php'> Connexion </a>"; 
+			echo "Pas encore de compte ? Créez-en un!";
+			echo "<a href='creerCompte.php'> Créer un compte </a>"; 
+		?>
 		
 	</body>
 </html>
