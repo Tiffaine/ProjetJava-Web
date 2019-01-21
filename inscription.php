@@ -24,7 +24,7 @@
 			</p>
 		</form>
 
-		<?php echo "<a href ='index.php'> Retour </a>"; 
+		<a href ='index.php'> Retour </a>
 
 
 		?> 
