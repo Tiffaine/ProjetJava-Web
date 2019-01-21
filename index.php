@@ -6,13 +6,11 @@
 	</head> 
 	<body> 
 		<?php
-			echo "Current PHP version :".phpversion();
-			echo "Bienvenue sur le Gestionnaire de Don du Sang";
-			echo "<a href='connexion.php'> Connexion </a>"; 
-			echo "Pas encore de compte ? Créez-en un!";
-			echo "<a href='inscription.php'> Créer un compte </a>"; 
+			echo "Current PHP version :".phpversion()."</br>";
+			echo "Bienvenue sur le Gestionnaire de Don du Sang </br>";
 		?>
-		
+		<a href='connexion.php'> Connexion </a>
+		<a href='inscription.php'> Créer un compte </a>
 	</body>
 </html>
 
