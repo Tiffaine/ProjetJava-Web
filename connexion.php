@@ -6,12 +6,14 @@
 		<title> Connexion </title> 
 	</head> 
 	<body> 
-		<?php echo "Connexion";
-		echo ("<a href=\"index.php\"> Retour </a>");
+		<br> Connexion </br>
+		<a href=\"index.php\"> Retour </a>
+	
+		<?php
 		// start a session 
 		session_start();
-
 		?>
+	
 		<form method ="get" action ="retourConnexion.php"> 
 			<p> 
 				login : <input type = "text" name="login" /> </br>
@@ -20,10 +22,8 @@
 			</p>
 		</form>
 
-		<?php echo "<a href ='index.php'> S'inscrire </a>"; 
+		<a href ='index.php'> S'inscrire </a>
 
-
-		?> 
 	</body>
 </html>
 
