@@ -6,7 +6,8 @@
 		<title> Page de connexion </title> 
 	</head> 
 	<body> 
-		<?php echo "Connexion </br>";
+		<br> Connexion </br>
+		<?php
 		// start a session 
 		session_start();
 		if(isset($_GET['login'] and $_GET['mdp']){
