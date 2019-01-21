@@ -35,7 +35,7 @@ CREATE TABLE 'Donneur'(
 	refDonneur integer not null, //Référence à l'utilisateur
 	refCollecte integer not null, //Référence à la collecte
 	groupeS varchar(10) not null, //Groupe sanguin A B AB O ou inconnu
-	rhesus varchar(1à) not null, //Rhesus + - ou inconnu
+	rhesus varchar(10) not null, //Rhesus + - ou inconnu
 	
 	foreign key(refDonneur) references Utilisateur(idUtilisateur), //Clé étrangère
 	foreign key(refCollecte) references Collecte(idCollecte) //Clé étrangère
