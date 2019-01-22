@@ -28,7 +28,8 @@
 					$sqlQuery = "select login from Utilisateur";
 					$sqlLogin = pg_query($sqlQuery) or die ('Echec de la requête : '. pg_last_error());
 					if($login != $sqlLogin){
-						
+						$sqlQuery = "INSERT INTO Utilisateur(type,login,mdp,nom,prenom,dateN) VALUES ('donneur'
+						,'.$login','.$mdp','.$nom','.$prenom','.$dateN');";
 						$result = pg_query($sqlQuery);
 						or die ('Echec de la requete : '. pg_last_error());
 						echo ("<a href=\"connexion.php\"> Compte créé</a>");
