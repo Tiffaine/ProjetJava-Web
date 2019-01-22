@@ -22,7 +22,7 @@
 		//Connexion à la base :) 
 		$connection = new pg_connect(host=localhost dbname=dondusang user=root password=network)
 					or die('Connexion impossible : '. pg_last_error());
-					$sqlQuery = "INSERT INTO Donneur (".$SESSION["idUtilisateur"].",".$idCollecte.",".$groupeSanguin.",".$rhesus;) ";
+					$sqlQuery = "INSERT INTO Donneur ('.$SESSION["idUtilisateur"].','.$idCollecte.','.$groupeSanguin.','.$rhesus.');";
 					$result = pg_query($sqlQuery)
 					or die('Echec de la requête : '.pg_last_error());
 					$resultat = $result -> fetch_assoc();
