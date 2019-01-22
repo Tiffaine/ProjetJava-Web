@@ -22,7 +22,7 @@
 				$prenom = $_GET["prenom"];
 				$dateN = $_GET["dateN"];
 				if($mdp==$validate){
-					$connection = pg_connect("host=localhost dbname=dondusang user=root password = network")
+					$connection = pg_connect("host=localhost dbname=dondusang user=admin password = projetgroupe4")
 					or die ('Connexion impossible : '.pg_last_error());
 					$connection->set_charset("utf8");
 					$sqlQuery = "select login from Utilisateur";
