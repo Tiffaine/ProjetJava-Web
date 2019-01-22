@@ -14,9 +14,12 @@
 			$login = $_GET['login'];
 			$mdp = $_GET['mdp'];
 			if(($login != "") and ($mdp != "")){
-				$connection = new pg_connect(host=localhost dbname=dondusang user=admin password=projetgroupe4)
-				or die('Connexion impossible : '. pg_last_error());
-				//$connection->set_charset("utf8");
+				$connection = new pg_connect(host=localhost dbname=dondusang user=admin password=projetgroupe4);
+				if($connection->connect_errno){
+					printf("Echec de la connection%s %s", $connexion->connect_errno, $connexion->connect_error);
+					exit();
+				}
+				$connection->set_charset("utf8");
 				$sqlQuery = "select idUtilisateur, type from Utilisateur u where u.login like '" . $login."' and u.mdp like '" . $mdp."'";
 				$result = pg_query($sqlQuery)
 				or die('Echec de la requête : '.pg_last_error());
