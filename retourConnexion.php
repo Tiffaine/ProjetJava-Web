@@ -14,7 +14,7 @@
 			$login = $_GET['login'];
 			$mdp = $_GET['mdp'];
 			if(($login != "") and ($mdp != "")){
-				$connection = new pg_connect(host=localhost dbname=dondusang user=admin password=projetgroupe4);
+				$connection = new pg_connect("host=localhost dbname=dondusang user=admin password=projetgroupe4");
 				if($connection->connect_errno){
 					printf("Echec de la connection%s %s", $connexion->connect_errno, $connexion->connect_error);
 					exit();
