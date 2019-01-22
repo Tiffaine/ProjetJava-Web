@@ -14,7 +14,7 @@
 			$login = $_GET['login'];
 			$mdp = $_GET['mdp'];
 			if(($login != "") and ($mdp != "")){
-				$connection = new pg_connect(host=localhost dbname=dondusang user=root password=network)
+				$connection = new pg_connect(host=localhost dbname=dondusang user=admin password=projetgroupe4)
 				or die('Connexion impossible : '. pg_last_error());
 				//$connection->set_charset("utf8");
 				$sqlQuery = "select idUtilisateur, type from Utilisateur u where u.login like '" . $login."' and u.mdp like '" . $mdp."'";
