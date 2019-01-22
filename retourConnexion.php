@@ -66,6 +66,7 @@
 			echo ("<a href=\"connexion.php\"> Retour à la connexion </a>");
 			exit();
 		}
+		?>
 	</body>
 </html>
 
