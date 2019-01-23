@@ -7,7 +7,7 @@
 	</head> 
 	<body> 
 		<br> Connexion </br>
-		<form method ="get" action ="retourConnexion.php"> 
+		<form method ="post" action ="retourConnexion.php"> 
 			<fieldset>
             	<legend>login : </legend>
                 <input type = "text" name="login" />
