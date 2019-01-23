@@ -10,9 +10,11 @@
 		<?php
 		// start a session 
 		session_start();
-		if(isset($_GET['login'] and $_GET['mdp']){
+		if(isset($_POST['login'] and $_POST['mdp']){
 			$login = $_GET['login'];
+			var_dump($login);
 			$mdp = $_GET['mdp'];
+			var_dump($mdp);
 			if(($login != "") and ($mdp != "")){
 				$pgsql_conn = pg_connect("dbname=dondusang host=localhost user=admin password=projetgroupe4");
 				if(!$pgsql_conn){
