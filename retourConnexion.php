@@ -9,7 +9,7 @@
 		<br> Connexion </br>
 		<?php
 		// start a session 
-		session_start();
+		//session_start();
 		if(isset($_POST['login'] and $_POST['mdp']){
 			$login = $_GET['login'];
 			var_dump($login);
