@@ -14,21 +14,19 @@
 			$login = $_GET['login'];
 			$mdp = $_GET['mdp'];
 			if(($login != "") and ($mdp != "")){
-				$connection = new pg_connect("host=localhost dbname=dondusang user=admin password=projetgroupe4");
-				if($connection->connect_errno){
-					printf("Echec de la connection%s %s", $connexion->connect_errno, $connexion->connect_error);
+				$pgsql_conn = pg_connect("dbname=dondusang host=localhost user=admin password=projetgroupe4");
+				if(!$pgsql_conn){
+					echo(pg_last_error($pgsql_conn));
 					exit();
 				}
-				$connection->set_charset("utf8");
 				$sqlQuery = "select idUtilisateur, type from Utilisateur u where u.login like '" . $login."' and u.mdp like '" . $mdp."'";
-				$result = pg_query($sqlQuery)
-				or die('Echec de la requête : '.pg_last_error());
+				$result = pg_query($pgsql_conn, $sqlQuery)
 				if(!$result){
 					echo ("Login ou Password invalide !</br>");
 					echo ("<a href=\"connexion.php\"> Retour à la connexion </a>");
 					exit();
 				} else {
-					$resultat = $result->fetch_assoc();
+					$resultat = pg_fetch_assoc($result);
 					if($resultat != NULL){
 						if($resultat["idUtilisateur"] != NULL){
 							//session_start();
