@@ -30,6 +30,7 @@
 					echo("code bon");
 					$pgsql_conn = pg_connect("dbname=dondusang host=localhost user=admin password=projetgroupe4");
 					if(!$pgsql_conn){
+						echo("connexion eronnee");
 						echo(pg_last_error($pgsql_conn));
 						exit();
 					} else {
