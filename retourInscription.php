@@ -6,36 +6,44 @@
 		<title> Page d'inscription </title> 
 	</head> 
 	<body> 
-		<?php echo "Connexion";
-			// start a session 
-			session_start();
-			if(isset($_GET["login"]) and 
-			   isset($_GET["mdp"]) and 
-			   isset($_GET["validate"]) and
-			   isset($_GET["nom"]) and 
-			   isset($_GET["prenom"]) and 
-			   isset($_GET["dateN"])){
-				$login = $_GET["login"];
-				$mdp = $_GET["mdp"];
-				$validate = $_GET["validate"];
-				$nom = $_GET["nom"];
-				$prenom = $_GET["prenom"];
-				$dateN = $_GET["dateN"];
+		<?php // start a session 
+			//session_start();
+			if(isset($_POST["login"]) and 
+			   isset($_POST["mdp"]) and 
+			   isset($_POST["validate"]) and
+			   isset($_POST["nom"]) and 
+			   isset($_POST["prenom"]) and 
+			   isset($_POST["dateN"])){
+				$login = $_POST["login"];
+				var_dump($login);
+				$mdp = $_POST["mdp"];
+				var_dump($mdp);
+				$validate = $_POST["validate"];
+				var_dump($validate);
+				$nom = $_POST["nom"];
+				var_dump($nom);
+				$prenom = $_POST["prenom"];
+				var_dump($prenom);
+				$dateN = $_POST["dateN"];
+				var_dump($dateN);
 				if($mdp==$validate){
-					$connection = pg_connect("host=localhost dbname=dondusang user=admin password = projetgroupe4")
-					or die ('Connexion impossible : '.pg_last_error());
-					$connection->set_charset("utf8");
-					$sqlQuery = "select login from Utilisateur";
-					$sqlLogin = pg_query($sqlQuery) or die ('Echec de la requête : '. pg_last_error());
-					if($login != $sqlLogin){
-						$sqlQuery = "INSERT INTO Utilisateur(type,login,mdp,nom,prenom,dateN) VALUES ('.donneur.'
-						,'.$login.','.$mdp.','.$nom.','.$prenom.','.$dateN.');";
-						$result = pg_query($sqlQuery);
-						or die ('Echec de la requete : '. pg_last_error());
-						echo ("<a href=\"connexion.php\"> Compte créé</a>");
+					echo("code bon");
+					$pgsql_conn = pg_connect("dbname=dondusang host=localhost user=admin password=projetgroupe4");
+					if(!$pgsql_conn){
+						echo(pg_last_error($pgsql_conn));
 						exit();
 					} else {
-						echo ("<a href=\"inscription.php\"> Login déjà utilisé</a>");
+						echo("connexion erronee");
+					}
+					$sql_query = "select login from Utilisateur u where u.login like '".$login"';";
+					echo($sql_query);
+					$sql_login = pg_query($pgsql_conn, $sql_query);
+					echo($sql_login);
+					if(pg_num_rows($sql_login) == '0'){
+						echo("On peut inscrire la personne");
+					} else {
+						echo ("Login déjà utilisé !");
+						echo ("<a href=\"inscription.php\"> Retour</a>");
 						exit();
 					}
 				} else {
@@ -49,4 +57,6 @@
 		?> 
 	</body>
 </html>
+
+
 
