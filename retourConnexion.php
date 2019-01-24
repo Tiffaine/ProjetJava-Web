@@ -38,9 +38,9 @@ if(isset($_POST['login']) and isset($_POST['mdp'])){
 			//var_dump($resultat);
 			if(($resultat != NULL) and ($resultat["idutilisateur"] != NULL)){
 				session_start();
-				$SESSION["id_user"] = $resultat["idutilisateur"];
+				$_SESSION["id_user"] = $resultat["idutilisateur"];
 				var_dump($SESSION["id_user"]);
-				if($SESSION["id_user"] == "1"){
+				if($_SESSION["id_user"] == "1"){
 					echo ("Vous êtes connecté en tant qu'administrateur </br>");
 					echo ("<br> <a href=\"menuAdministrateur.php\"> Menu administrateur </a> </br>");
 					echo ("<br> <a href=\"connexion.php\"> Retour </a> </br>");
