@@ -9,7 +9,7 @@
 	<body>
 		<?php 
 			session_start(); 
-			if($SESSION["idUtilisateur"]!='1'){
+			if($_SESSION["idUtilisateur"]!='1'){
 				echo ("<a href=\"participerCollecte.php\"> Participer à une collecte </a>"); <br> 
 				echo ("<a href=\"AnnulerCollecte.php\"> Annuler ma participation à une collecte </a>"); <br> 
 			}
